@@ -25,7 +25,7 @@ char *_itoa(int num, char *s, unsigned int base)
 	{
 		res = num % base;
 		if (res > 9)
-			s[i] = res + 'a';
+			s[i] = (res - 10) + 'a';
 		else
 			s[i] = res + '0';
 		num = num / base;
@@ -60,7 +60,7 @@ char *_utoa(unsigned int num, char *s, unsigned int base)
 	{
 		res = num % base;
 		if (res > 9)
-			s[i] = res + 'a';
+			s[i] = (res - 10) + 'a';
 		else
 			s[i] = res + '0';
 		num = num / base;
@@ -90,7 +90,7 @@ char *_utoah(unsigned int num, char *s, unsigned int base)
 	{
 		res = num % base;
 		if (res > 9)
-			s[i] = res + 'A';
+			s[i] = (res - 10) + 'A';
 		else
 			s[i] = res + '0';
 		num = num / base;
