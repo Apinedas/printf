@@ -2,7 +2,7 @@
 
 /**
  * c_case - function for c case
- * @ap; Character
+ * @ap: Character
  * @buff: buffer
  * @print_len: Actual position of buff
  * Return: Last position on buff
@@ -13,9 +13,9 @@ int c_case(va_list ap, char *buff, int print_len)
 	char *c;
 
 	c = malloc((sizeof(char) + 1));
-	if (c == NULL)
-		return (1);
 	c[0] = va_arg(ap, int);
+	if (c == NULL)
+		return (print_len);
 	c[1] = '\0';
 	print_len = replace(buff, c, print_len);
 	free(c);
@@ -35,8 +35,10 @@ int s_case(va_list ap, char *buff, int print_len)
 	char *s;
 	char *aux;
 	int s_len;
-	
+
 	aux = va_arg(ap, char*);
+	if (aux == NULL)
+		aux = "(null)";
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
 	if (s == NULL)
@@ -77,7 +79,7 @@ int dec_case(va_list ap, char *buff, int print_len)
 
 /**
  * perc_case - function for % case
- * @ap; Unused
+ * @ap: Unused
  * @buff: buffer
  * @print_len: Actual position of buff
  * Return: Last position on buff

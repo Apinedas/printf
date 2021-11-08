@@ -8,7 +8,7 @@
  * Return: Final position
  */
 
-int replace(char *buffer, char* s, int print_len)
+int replace(char *buffer, char *s, int print_len)
 {
 	int i = 0;
 

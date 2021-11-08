@@ -3,6 +3,7 @@
 /**
  * _printf - Start function for printf project
  * @format: String to print with formatting options
+ * Return: -1 on failure, lenght of printed string otherwise
  */
 
 int _printf(char *format, ...)
@@ -15,7 +16,7 @@ int _printf(char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0')
 			|| (format[0] == '\\' && format[1] == '\0'))
-		return(-1);
+		return (-1);
 	va_start(ap, format);
 	while (format && format[i])
 	{
@@ -42,5 +43,5 @@ int _printf(char *format, ...)
 	}
 	write(1, buffer, print_len);
 	va_end(ap);
-	return(print_len);
+	return (print_len);
 }
