@@ -21,7 +21,7 @@ compile all `.c` files in the repository and include the header `main.h`in the e
 
 int main()
 {
-    _printf("Hi, buddy from C16!");
+    _printf("Hi buddy,from C16!");
 
     return (0);
 }
@@ -35,7 +35,7 @@ $ gcc *.c -o [File_name]
 ### Output:
 ```
 $ ./[File_Name]
-Hi, buddy from C16!
+Hi buddy, from C16!
 $
 ```
 
@@ -62,8 +62,95 @@ The function writes under the control of a `format` string that specifies how co
 - in progress....
 
 ## Conversion Specifiers
-- in progress...
+The conversion specifier introduced by the character `%` is a character that
+specifies the type of conversion to be applied. 
 
+The `_printf` function supports the following conversion specifiers:
+
+### d, i
+The `i` and `d` argument is converted to char for decimal and integer notation.
+
+#### Example `main.c`:
+```
+int main()
+{
+    _printf("%d\n", 7);
+}
+```
+#### Output:
+```
+7
+```
+### o, u, x, X
+The `unsigned int` argument is converted to: 
+unsigned octal (`o`), 
+unsigned decimal (`u`), 
+unsigned hexadecimal (`x`) 
+and unsigned hexadecimal Uppercase(`X`). 
+
+The letters `abcdef` are
+used for `x` conversions and the letters `ABCDEF` are used for `X` conversions.
+
+Then for each case function `_utoa`convert unsigned int variable arguments into char
+
+#### Example `main.c`:
+```
+int main()
+{
+    _printf("%o\n", 77);
+}
+```
+#### Output:
+```
+115
+```
+
+### C
+The `int` argument is converted to an `char`.
+
+Example `main.c`:
+```
+int main()
+{
+    _printf("%c\n", 48);
+}
+```
+Output:
+```
+0
+```
+### S
+No argument is converted. 
+Arguments are allocated into `strtmp`counter.
+
+Example `main.c`:
+```
+int main()
+{
+    _printf("%s\n", "Hello, World!");
+}
+```
+Output:
+```
+Hello, World!
+```
+#### %
+A `%` is written. 
+No argument is converted. 
+The complete conversion
+specification is `%%`.
+
+Example:
+```
+int main(void)
+{
+    _printf("%%\n");
+}
+```
+Output:
+```
+%
+```
 ## Authors
 * Andrés Medina <[TheRealMedi](https://github.com/TheRealMedi)>
 * Alejandro Pineda Sánchez <[Apinedas](https://github.com/Apinedas)> 
