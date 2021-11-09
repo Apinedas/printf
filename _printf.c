@@ -11,7 +11,7 @@ int _printf(char *format, ...)
 	int i = 0;
 	size_t print_len = 0;
 	va_list ap;
-	char buffer[1024];
+	char buffer[2048];
 	int (*convfun)(va_list, char *, int);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0')

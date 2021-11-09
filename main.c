@@ -40,7 +40,6 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    _printf("Test %%%s%c\n", "This is a string ", 64);
-    printf("Test %%%s%c\n", "This is a string ", 64);
+    _printf("%s\n", 0);
     return (0);
 }

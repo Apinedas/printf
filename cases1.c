@@ -13,9 +13,11 @@ int c_case(va_list ap, char *buff, int print_len)
 	char *c;
 
 	c = malloc((sizeof(char) + 1));
-	c[0] = va_arg(ap, int);
 	if (c == NULL)
 		return (print_len);
+	c[0] = va_arg(ap, int);
+	if (c[0] == 0)
+		print_len += 1;
 	c[1] = '\0';
 	print_len = replace(buff, c, print_len);
 	free(c);

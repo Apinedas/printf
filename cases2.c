@@ -112,3 +112,47 @@ int uhex_case(va_list ap, char *buff, int print_len)
 	free(aux);
 	return (print_len);
 }
+
+/**
+ * S_case - function for S case
+ * @ap: String
+ * @buff: buffer
+ * @print_len: actual position of buff
+ * Return: Last position on buff
+ */
+
+int S_case(va_list ap, char *buff, int print_len)
+{
+	char *s;
+	char *aux;
+	int s_len;
+	int i, j;
+
+	aux = va_arg(ap, char*);
+	if (aux == NULL)
+		aux = "(null)";
+	s_len = _strlen(aux);
+	for (i = 0; aux[i] != '\0'; i++)
+	{
+		if (aux[i] < 32 || aux[i] >= 127)
+			s_len += 3;
+	}
+	s = malloc((sizeof(char) * s_len) + 1);
+	if (s == NULL)
+		return (1);
+	_strcpy(s, aux);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (aux[i] < 32 || aux[i] >= 127)
+		{
+			j = s[i];
+			_strcpy(&(s[i + 3]), &(s[i]));
+			s[i] = 92;
+			s[i + 1] = 'x';
+			_itoa(j, &s[i + 2], 16);
+		}
+	}
+	print_len = replace(buff, s, print_len);
+	free(s);
+	return (print_len);
+}
