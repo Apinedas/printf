@@ -20,10 +20,12 @@ int (*get_print_cases(char *arg))(va_list, char *, int)
 		{"o", oct_case},
 		{"x", lhex_case},
 		{"X", uhex_case},
-		{"S", S_case}
+		{"S", S_case},
+		{"r", r_case},
+		{"R", R_case}
 		};
 
-	while (i < 11)
+	while (i < 13)
 	{
 		if (*arg == *(formats[i]).pfcase)
 			return ((formats[i].convfun));
