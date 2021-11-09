@@ -13,22 +13,29 @@ char *_itoa(int num, char *s, unsigned int base)
 	int i = 0;
 	int res;
 	int sign = 0;
+	unsigned int aux;
 
 	if (num == 0)
-		s[i + 1] = '0';
+	{
+		s[i] = '0';
+		s[i + 1] = '\0';
+		return (s);
+	}
 	if (num < 0 && base == 10)
 	{
 		sign = 1;
-		num = num * (-1);
+		aux = num * (-1);
 	}
-	while (num > 0)
+	else
+		aux = num;
+	while (aux > 0)
 	{
-		res = num % base;
+		res = aux % base;
 		if (res > 9)
 			s[i] = (res - 10) + 'a';
 		else
 			s[i] = res + '0';
-		num = num / base;
+		aux = aux / base;
 		i++;
 	}
 	if (sign == 1)
@@ -55,7 +62,11 @@ char *_utoa(unsigned int num, char *s, unsigned int base)
 	int res;
 
 	if (num == 0)
-		s[i + 1] = '0';
+	{
+		s[i] = '0';
+		s[i + 1] = '\0';
+		return (s);
+	}
 	while (num > 0)
 	{
 		res = num % base;
@@ -85,7 +96,11 @@ char *_utoah(unsigned int num, char *s, unsigned int base)
 	int res;
 
 	if (num == 0)
-		s[i + 1] = '0';
+	{
+		s[i] = '0';
+		s[i + 1] = '\0';
+		return (s);
+	}
 	while (num > 0)
 	{
 		res = num % base;
