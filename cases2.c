@@ -16,6 +16,8 @@ int uns_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux ==  NULL)
+		return (1);
 	aux = _utoa(num, aux, 10);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
@@ -44,6 +46,8 @@ int oct_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux == NULL)
+		return (1);
 	aux = _utoa(num, aux, 8);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
@@ -72,6 +76,8 @@ int lhex_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux == NULL)
+		return (1);
 	aux = _utoa(num, aux, 16);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
@@ -101,6 +107,8 @@ int uhex_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux == NULL)
+		return (1);
 	aux = _utoah(num, aux, 16);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);

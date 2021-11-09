@@ -67,6 +67,8 @@ int dec_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux == NULL)
+		return (1);
 	aux = _itoa(num, aux, 10);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
@@ -117,6 +119,8 @@ int bin_case(va_list ap, char *buff, int print_len)
 
 	num = va_arg(ap, int);
 	aux = malloc(sizeof(char) * 35);
+	if (aux == NULL)
+		return (1);
 	aux = _itoa(num, aux, 2);
 	s_len = _strlen(aux);
 	s = malloc((sizeof(char) * s_len) + 1);
