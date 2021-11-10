@@ -7,8 +7,11 @@ The `_printf` program is a pseudo- recreation of the C standard library function
 Our `_printf` function was coded on an Ubuntu [Pending] LTS machine with `gcc` version [Pending]
 
 ## Flowchart
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lkDdZv8=/?moveToViewport=-721,-911,2607,1476" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 
+<p align="center">
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lkDdZv8=/?moveToViewport=-721,-911,2607,1476" frameBorder="0" scrolling="no" allowFullScreen>
+</iframe>
+</p>
 
 ## Usage
 
