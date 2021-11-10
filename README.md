@@ -7,7 +7,7 @@ The `_printf` program is a pseudo- recreation of the C standard library function
 Our `_printf` function was coded on `MacOS 10.14.16` Using   `bash` and  `Ubuntu 20.04 LTS` machine, both with `gcc` version Version 9.3.0
 
 ## Man page
-If you want to install _printf man page source, just copy `_printf.3.gz`file to `/usr/local/share/man/man3` path. 
+If you want to install `_printf` man page source, just copy `_printf.3.gz`file to `/usr/local/share/man/man3` path. 
 
 using this line:
 ```
