@@ -2,10 +2,14 @@
 
 The `_printf` program is a pseudo- recreation of the C standard library function, `printf` as part of the low-level programming and algorithm track at Holberton School Colombia. 
 
-## Dependencies
+## Dependences
 
 Our `_printf` function was coded on `MacOS 10.14.16` Using   `bash` and  `Ubuntu 20.04 LTS` machine, both with `gcc` version Version 9.3.0
 
+## Man page
+If you want to install _printf man page source, just copy `_printf.3.gz`file to `/usr/local/share/man/man3` path. 
+
+Then, you can type `man _printf`in your console. and you'll be reading our man page.
 ## Flowchart
 ![Flowchart Template](https://user-images.githubusercontent.com/85316546/141045630-c0e272fb-0a38-4740-99f3-8c053ab6fe3f.jpg)
 
@@ -37,7 +41,7 @@ Hi buddy, from C16!
 $
 ```
 
-## Description :speech_balloon:
+## Description
 
 ### Syntaxis
 
@@ -50,10 +54,14 @@ The function writes under the control of a `format` string that specifies how co
 
 
 ### Return Value
-- in progress...
+If successful return, `_printf` returns the number of characters printed excluding the terminating null byte used to end output to strings.
+
+But If an output error is encountered, the function returns `-1` and it does not print anything.
 
 ### Format of the Argument String
-- in progress... 
+The  `format`  string is a constant character string composed of ordinary characters which are copied unchanged to the output stream.
+
+Specification cases are introduced by the character  `%`  and ends with a conversion specifier.
 
 
 ## Conversion Specifiers
