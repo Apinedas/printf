@@ -4,16 +4,14 @@ The `_printf` program is a pseudo- recreation of the C standard library function
 
 ## Dependencies
 
-Our `_printf` function was coded on an Ubuntu [Pending] LTS machine with `gcc` version [Pending]
+Our `_printf` function was coded on `MacOS 10.14.16` Using   `bash` and  `Ubuntu 20.04 LTS` machine, both with `gcc` version Version 9.3.0
 
 ## Flowchart
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/o9J_lkDdZv8=/?moveToViewport=-721,-911,2607,1476" frameBorder="0" scrolling="no" allowFullScreen></iframe>
-
+![Flowchart Template](https://user-images.githubusercontent.com/85316546/141045630-c0e272fb-0a38-4740-99f3-8c053ab6fe3f.jpg)
 
 ## Usage
 
-Bassically to use the `_printf` function, *assuming the above `.c` dependencies have been installed,*
-compile all `.c` files in the repository and include the header `main.h`in the entry point function.
+To use the `_printf` function, *assuming the above `.c` dependencies have been installed,* compile all `.c` files in the repository and include the header `main.h`in the entry point function.
 
 ### Example `main.c`:
 ```
@@ -57,13 +55,9 @@ The function writes under the control of a `format` string that specifies how co
 ### Format of the Argument String
 - in progress... 
 
-### Flag Characters
-
-- in progress....
 
 ## Conversion Specifiers
-The conversion specifier introduced by the character `%` is a character that
-specifies the type of conversion to be applied. 
+The conversion specifier introduced by the character `%` is a character that specifies the type of conversion to be applied. 
 
 The `_printf` function supports the following conversion specifiers:
 
@@ -74,12 +68,12 @@ The `i` and `d` argument is converted to char for decimal and integer notation.
 ```
 int main()
 {
-    _printf("%d\n", 7);
+    _printf("%d\n", 9);
 }
 ```
 #### Output:
 ```
-7
+9
 ```
 ### o, u, x, X
 The `unsigned int` argument is converted to: 
@@ -91,7 +85,7 @@ and unsigned hexadecimal Uppercase(`X`).
 The letters `abcdef` are
 used for `x` conversions and the letters `ABCDEF` are used for `X` conversions.
 
-Then for each case function `_utoa`convert unsigned int variable arguments into char
+Then for each case, modded `utoa` pseudo functions were used 
 
 #### Example `main.c`:
 ```
@@ -105,7 +99,7 @@ int main()
 115
 ```
 
-### C
+### c
 The `int` argument is converted to an `char`.
 
 Example `main.c`:
@@ -120,8 +114,7 @@ Output:
 0
 ```
 ### s
-No argument is converted. 
-
+Arguments are printed as a string.
 
 Example `main.c`:
 ```
@@ -150,6 +143,36 @@ int main(void)
 Output:
 ```
 %
+```
+#### Reverse String
+String arguments are printed in reverse.
+
+Example:
+```
+int main(void)
+{
+	_printf("%r\n", "Hello");
+}
+```
+
+ Output:
+```
+olleH
+```
+
+#### ROT13
+String arguments are coded in ROT13
+
+Example:
+```
+int main(void)
+{
+	_printf("%R\n", "Hello");
+}
+``` 
+Output:
+```
+Uryyb
 ```
 ## Authors
 * Andrés Medina <[TheRealMedi](https://github.com/TheRealMedi)>
