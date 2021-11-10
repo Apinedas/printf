@@ -9,6 +9,10 @@ Our `_printf` function was coded on `MacOS 10.14.16` Using   `bash` and  `Ubuntu
 ## Man page
 If you want to install _printf man page source, just copy `_printf.3.gz`file to `/usr/local/share/man/man3` path. 
 
+using this line:
+```
+cp [Your _printf.3.gz path] /usr/local/share/man/man3
+```
 Then, you can type `man _printf`in your console. and you'll be reading our man page.
 ## Flowchart
 ![Flowchart Template](https://user-images.githubusercontent.com/85316546/141045630-c0e272fb-0a38-4740-99f3-8c053ab6fe3f.jpg)
